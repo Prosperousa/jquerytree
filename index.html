@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>框架-首页</title>
+<link rel="stylesheet" href="config/css/css.css" />
+</style>
+</head>
+<body>
+<div class="f-tree"></div>
+</body>
+<script src="https://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+
+<script type="text/javascript" src="config/js/data.js" ></script>
+<script type="text/javascript" src="config/js/config.js" ></script>
+<script>
+	config.tree({
+		type:1,//1有选择框，没有则不传type或传0
+		wrapper:'.f-tree',//容器
+		data:treeData,//数据
+		check:[]//选中的数据，可以不传
+
+	});
+
+window.onload=function(){
+		var spans = document.querySelectorAll(".f-treeList-radio");
+		// console.log(spans);
+		for(var i=0;i<spans.length;i++)
+		{
+
+				spans[i].addEventListener("click",function(){
+						config.treeJson({wrapper:'.f-tree'});
+					})
+		}
+		
+			
+	}
+</script>
+</html>
